@@ -100,7 +100,7 @@ table{width:100%;border-collapse:collapse;font: .9rem Arial,sans-serif}th,td{tex
  const client=ready&&window.supabase?window.supabase.createClient(cfg.url,cfg.anonKey):null;
  const form=document.getElementById('rsvpForm'), notice=document.getElementById('notice');
  const attending=document.getElementById('attending'), counts=document.getElementById('counts');
- const say=(el,msg)=>{el.textContent=msg;el.style.display='block'};
+ const say=(el,msg)=>{el.textContent=msg;el.classList.remove('hidden');el.style.display='block'};
  attending.addEventListener('change',()=>{counts.classList.toggle('hidden',attending.value==='no')});
  form.addEventListener('submit',async e=>{
   e.preventDefault();
