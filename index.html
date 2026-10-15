@@ -1,54 +1,109 @@
 <!doctype html>
 <html lang="ro">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#781f24">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#8e1b1f">
 <title>Petrecerea lui Daniel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
 <style>
-:root{--red:#81272b;--red2:#a23b3b;--cream:#fbf5e8;--ink:#39271d;--gold:#c9a66b}
-*{box-sizing:border-box}body{margin:0;background:#e9dfca;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
-.page{max-width:780px;margin:22px auto;background:var(--cream);border:1px solid #d3b98b;box-shadow:0 14px 45px #39271d25;position:relative;overflow:hidden}
-.page:before{content:"";position:absolute;inset:12px;border:1px solid #b78362;pointer-events:none}
-.hero{padding:48px 28px 28px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#e8d9b8 0,transparent 60%)}
-.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;color:var(--red);font-weight:bold}
-h1{font-size:clamp(2.5rem,8vw,5rem);line-height:1.02;color:var(--red);font-style:italic;margin:16px 0}
-.subtitle{font-size:1.1rem;line-height:1.6;max-width:520px;margin:0 auto}
-.ornament{color:var(--red);letter-spacing:.35em;font-size:1.4rem;margin:18px}
-.details{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px 30px 24px;text-align:center}
-.detail{padding:14px 8px;border-right:1px solid #d7c4a0}.detail:last-child{border:0}.detail strong{display:block;color:var(--red);font-size:1.05rem;margin-bottom:6px}.detail span{line-height:1.4}
-.section{padding:25px 28px 34px;max-width:590px;margin:auto}
-h2{font-size:1.8rem;text-align:center;color:var(--red);margin:0 0 10px}
-.intro{text-align:center;line-height:1.55;margin-bottom:22px}
-label{display:block;font-size:.96rem;margin:14px 0 6px;font-weight:bold}
-input,select,textarea{width:100%;padding:12px 13px;border:1px solid #cbb58f;border-radius:8px;background:#fffdf8;color:var(--ink);font:inherit}
+:root{--red:#8e1b1f;--red-d:#661316;--black:#1d1a17;--linen:#f6eedc;--linen2:#eddfc2;--ink:#2b2119;--muted:#6f5a45;--line:#cdb48a;--serif:'Playfair Display',Georgia,'Times New Roman',serif;--body:'Alegreya',Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#e4d3b0;color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.55;padding:18px 14px 28px}
+.card{max-width:640px;margin:0 auto;background:var(--linen);border:2px solid var(--red);outline:1px solid var(--red);outline-offset:4px;box-shadow:0 18px 50px rgba(60,30,10,.25)}
+.band{display:block;width:100%;height:36px;background:var(--linen2);border-top:3px solid var(--red);border-bottom:3px solid var(--red)}
+.band.thin{height:36px;border-width:2px}
+header{padding:38px 24px 30px;text-align:center}
+.eyebrow{margin:0;font-weight:700;font-size:.95rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+h1{margin:18px 0 6px;font-family:var(--serif);font-style:italic;font-weight:700;line-height:1;color:var(--red)}
+h1 .small{display:block;font-size:clamp(1.6rem,6vw,2.1rem);color:var(--black)}
+h1 .big{display:block;font-weight:900;font-size:clamp(3.6rem,19vw,6.2rem);letter-spacing:-.01em;margin-top:6px}
+.lead{max-width:30em;margin:18px auto 0;font-size:1.2rem}
+.details{display:grid;grid-template-columns:repeat(3,1fr);margin:0;padding:6px 18px 30px;text-align:center}
+.detail{padding:12px 10px;border-left:1px solid var(--line)}
+.detail:first-child{border-left:0}
+.detail dt{font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);font-weight:700;margin:0 0 6px}
+.detail dd{margin:0;font-size:1.2rem;line-height:1.3}
+.detail dd b{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--black)}
+.section{padding:30px 24px 34px;max-width:540px;margin:0 auto}
+h2{font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(1.8rem,7vw,2.3rem);text-align:center;color:var(--red);margin:0 0 8px;line-height:1.15}
+.intro{text-align:center;margin:0 0 20px;color:var(--muted)}
+label{display:block;font-size:1rem;font-weight:700;margin:16px 0 6px;color:var(--black)}
+input,select,textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:3px;background:#fffbf1;color:var(--ink);font:inherit;font-size:1.05rem}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:3px solid rgba(142,27,31,.35);outline-offset:1px;border-color:var(--red)}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-button,.button{border:0;border-radius:999px;background:var(--red);color:#fff8eb;padding:13px 22px;font:inherit;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
-button:hover,.button:hover{background:#5e171b}button:disabled{opacity:.6;cursor:wait}
-.actions{text-align:center;margin-top:22px}.notice{margin-top:14px;padding:12px;border-radius:8px;background:#efe5cf;display:none;line-height:1.45}
-footer{text-align:center;padding:18px;color:#775c45;font-size:.88rem}
-.admin{margin:0 auto 28px;max-width:700px;padding:20px;background:#fffaf0;border:1px solid #d3b98b;border-radius:14px}
-.admin h2{font-size:1.4rem}.hidden{display:none!important}.stats{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.stat{background:#efe5cf;border-radius:9px;padding:10px 14px}.stat b{display:block;font-size:1.4rem;color:var(--red)}
-table{width:100%;border-collapse:collapse;font: .9rem Arial,sans-serif}th,td{text-align:left;border-bottom:1px solid #dfd1b7;padding:9px 6px}th{color:var(--red)}
-@media(max-width:560px){.page{margin:0 auto}.hero{padding-top:38px}.details{padding:10px 22px 18px;grid-template-columns:1fr;gap:0}.detail{border-right:0;border-bottom:1px solid #d7c4a0;padding:10px}.detail:last-child{border:0}.row{grid-template-columns:1fr}.section{padding:22px 26px 30px}}
+button{border:0;border-radius:3px;background:var(--red);color:#fff6e4;padding:15px 26px;font:inherit;font-weight:700;font-size:1.05rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+button:hover{background:var(--red-d)}
+button:disabled{opacity:.6;cursor:wait}
+.actions{text-align:center;margin-top:24px}
+.notice{margin-top:16px;padding:14px;border-left:4px solid var(--red);background:var(--linen2);display:none}
+.hint{text-align:center;font-size:.95rem;color:var(--muted);margin:18px 0 0}
+footer{text-align:center;padding:20px 20px 26px;color:var(--red);font-family:var(--serif);font-style:italic;font-size:1.3rem}
+.admin{max-width:640px;margin:26px auto 0;padding:20px;background:#fbf5e6;border:1px solid var(--line);border-radius:4px;font-size:1rem}
+.admin h2{font-size:1.5rem}
+.hidden{display:none!important}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.stat{background:var(--linen2);padding:10px 14px;border-radius:3px}
+.stat b{display:block;font-size:1.5rem;color:var(--red)}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font:.92rem Arial,sans-serif}
+th,td{text-align:left;border-bottom:1px solid #dfd1b7;padding:9px 6px;vertical-align:top}
+th{color:var(--red)}
+.defs{position:absolute;width:0;height:0;overflow:hidden}
+.duck{display:block;width:104px;height:104px;margin:0 auto 10px}
+.duck.sm{width:64px;height:64px;margin:0 auto 6px;transform:scaleX(-1)}
+@media(prefers-reduced-motion:no-preference){header .duck{animation:bob 3.2s ease-in-out infinite}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}}
+@media(max-width:560px){
+ body{padding:12px 12px 22px}
+ header{padding:30px 18px 24px}
+ .details{grid-template-columns:1fr;padding:2px 22px 24px}
+ .detail{border-left:0;border-top:1px solid var(--line);padding:14px 6px}
+ .detail:first-child{border-top:0}
+ .row{grid-template-columns:1fr}
+ .section{padding:26px 20px 30px}
+}
+@media(prefers-reduced-motion:no-preference){.card{animation:in .6s ease both}@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
 </style>
 </head>
 <body>
-<main class="page">
-  <header class="hero">
-    <div class="eyebrow">Cu drag, te invitÄm</div>
-    <div class="ornament">â¿ â¦ â¿</div>
-    <h1>Petrecerea<br>lui Daniel</h1>
-    <p class="subtitle">Hai sÄ sÄrbÄtorim Ã®mpreunÄ Ã®ntr-un loc plin de naturÄ, voie bunÄ Èi oameni dragi!</p>
-    <div class="ornament">â§ â¤ â§</div>
+<svg class="defs" aria-hidden="true" focusable="false"><defs><pattern id="rom" width="36" height="36" patternUnits="userSpaceOnUse" shape-rendering="crispEdges"><rect x="16" y="0" width="4" height="4" fill="#8e1b1f"/><rect x="12" y="4" width="4" height="4" fill="#8e1b1f"/><rect x="20" y="4" width="4" height="4" fill="#8e1b1f"/><rect x="8" y="8" width="4" height="4" fill="#8e1b1f"/><rect x="16" y="8" width="4" height="4" fill="#1d1a17"/><rect x="24" y="8" width="4" height="4" fill="#8e1b1f"/><rect x="4" y="12" width="4" height="4" fill="#8e1b1f"/><rect x="12" y="12" width="4" height="4" fill="#1d1a17"/><rect x="20" y="12" width="4" height="4" fill="#1d1a17"/><rect x="28" y="12" width="4" height="4" fill="#8e1b1f"/><rect x="0" y="16" width="4" height="4" fill="#8e1b1f"/><rect x="8" y="16" width="4" height="4" fill="#1d1a17"/><rect x="16" y="16" width="4" height="4" fill="#8e1b1f"/><rect x="24" y="16" width="4" height="4" fill="#1d1a17"/><rect x="32" y="16" width="4" height="4" fill="#8e1b1f"/><rect x="4" y="20" width="4" height="4" fill="#8e1b1f"/><rect x="12" y="20" width="4" height="4" fill="#1d1a17"/><rect x="20" y="20" width="4" height="4" fill="#1d1a17"/><rect x="28" y="20" width="4" height="4" fill="#8e1b1f"/><rect x="8" y="24" width="4" height="4" fill="#8e1b1f"/><rect x="16" y="24" width="4" height="4" fill="#1d1a17"/><rect x="24" y="24" width="4" height="4" fill="#8e1b1f"/><rect x="12" y="28" width="4" height="4" fill="#8e1b1f"/><rect x="20" y="28" width="4" height="4" fill="#8e1b1f"/><rect x="16" y="32" width="4" height="4" fill="#8e1b1f"/></pattern>
+<symbol id="duck" viewBox="0 0 120 120">
+ <path d="M26 72 Q8 66 10 50 Q24 52 32 66 Z" fill="#f2c335"/>
+ <ellipse cx="58" cy="80" rx="37" ry="27" fill="#f7cd45"/>
+ <path d="M44 82 Q58 64 80 80 Q68 98 44 82 Z" fill="#efb52c" stroke="#d99a1a" stroke-width="2" stroke-linejoin="round"/>
+ <circle cx="76" cy="44" r="25" fill="#fbd95c"/>
+ <path d="M70 20 Q66 10 74 11 M76 19 Q76 8 84 11 M82 21 Q86 13 91 17" fill="none" stroke="#e5ae25" stroke-width="3" stroke-linecap="round"/>
+ <path d="M97 45 Q114 44 112 54 Q106 61 96 55 Z" fill="#f08a24"/>
+ <path d="M98 50 Q106 51 110 52" fill="none" stroke="#c96a12" stroke-width="2" stroke-linecap="round"/>
+ <circle cx="83" cy="40" r="4" fill="#1d1a17"/>
+ <circle cx="84.4" cy="38.6" r="1.4" fill="#fff"/>
+ <ellipse cx="89" cy="53" rx="5.5" ry="3.4" fill="#f29a8a" opacity=".75"/>
+ <path d="M46 104 L40 114 L54 114 Z M66 104 L60 114 L74 114 Z" fill="#f08a24"/>
+</symbol></defs></svg>
+
+<main class="card">
+  <svg class="band" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#rom)"/></svg>
+  <header>
+    <svg class="duck" viewBox="0 0 120 120" role="img" aria-label="Bobocel"><use href="#duck" width="120" height="120"/></svg>
+    <p class="eyebrow">Cu drag, v&#259; invit&#259;m</p>
+    <h1><span class="small">Petrecerea lui</span><span class="big">Daniel</span></h1>
+    <p class="lead">Hai s&#259; s&#259;rb&#259;torim &#238;mpreun&#259;, &#238;ntr-un loc plin de natur&#259;, cu voie bun&#259; &#537;i oameni dragi!</p>
   </header>
-  <section class="details">
-    <div class="detail"><strong>â¿ DATA</strong><span>12 iunie</span></div>
-    <div class="detail"><strong>â· ORA</strong><span>14:00 â 22:00</span></div>
-    <div class="detail"><strong>â LOCAÈIA</strong><span>Casa din lunca<br>Trebujeni</span></div>
-  </section>
+  <svg class="band thin" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#rom)"/></svg>
+  <dl class="details">
+    <div class="detail"><dt>Data</dt><dd><b>12 iunie</b></dd></div>
+    <div class="detail"><dt>Ora</dt><dd><b>14:00 &#8211; 22:00</b></dd></div>
+    <div class="detail"><dt>Loca&#539;ia</dt><dd><b>Casa din lunca</b><br>Trebujeni</dd></div>
+  </dl>
+  <svg class="band thin" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#rom)"/></svg>
+
   <section class="section" id="rsvp">
-    <h2>Ne bucurÄm sÄ vii!</h2>
-    <p class="intro">Te rugÄm sÄ confirmi prezenÈa Èi sÄ ne spui cÃ¢te persoane vor participa.</p>
+    <h2>Ne bucur&#259;m s&#259; vii!</h2>
+    <p class="intro">Te rug&#259;m s&#259; ne confirmi prezen&#539;a &#537;i s&#259; ne spui c&#226;&#539;i invita&#539;i vor veni.</p>
     <form id="rsvpForm">
       <div class="row">
         <div><label for="first_name">Prenume *</label>
@@ -59,44 +114,48 @@ table{width:100%;border-collapse:collapse;font: .9rem Arial,sans-serif}th,td{tex
       <label for="attending">Vei participa? *</label>
       <select id="attending" name="attending" required>
         <option value="yes">Da, venim cu drag!</option>
-        <option value="no">Din pÄcate, nu putem ajunge</option>
+        <option value="no">Din p&#259;cate, nu putem ajunge</option>
       </select>
       <div id="counts">
         <div class="row">
-          <div><label for="adults">NumÄr adulÈi *</label><select id="adults" name="adults"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div>
-          <div><label for="children">NumÄr copii *</label><select id="children" name="children"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div>
+          <div><label for="adults">Num&#259;r adul&#539;i *</label><select id="adults" name="adults"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div>
+          <div><label for="children">Num&#259;r copii *</label><select id="children" name="children"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div>
         </div>
       </div>
-      <label for="note">NotÄ (opÈional)</label>
-      <textarea id="note" name="note" rows="3" maxlength="500" placeholder="Alergii, menÈiuni sau un mesaj pentru Danielâ¦"></textarea>
-      <div class="actions"><button id="submitBtn" type="submit">ConfirmÄ prezenÈa</button></div>
+      <label for="note">Not&#259; (op&#539;ional)</label>
+      <textarea id="note" name="note" rows="3" maxlength="500" placeholder="Alergii, men&#539;iuni sau un mesaj pentru Daniel&#8230;"></textarea>
+      <div class="actions"><button id="submitBtn" type="submit">Confirm&#259; prezen&#539;a</button></div>
       <div id="notice" class="notice" role="status"></div>
     </form>
-    <p style="text-align:center;font-size:.85rem;color:#775c45;margin-top:18px">Confirmarea ta ne ajutÄ sÄ pregÄtim totul cu drag. MulÈumim!</p>
+    <p class="hint">R&#259;spunsul t&#259;u ne ajut&#259; s&#259; preg&#259;tim totul cu drag. Mul&#539;umim!</p>
   </section>
-  <footer>Cu drag, te aÈteptÄm! â¡</footer>
+
+  <svg class="band" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#rom)"/></svg>
+  <footer><svg class="duck sm" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><use href="#duck" width="120" height="120"/></svg>V&#259; a&#537;tept&#259;m cu drag!</footer>
 </main>
+
 <section class="admin" id="admin">
   <h2>Panou organizator</h2>
-  <p style="text-align:center">ConecteazÄ-te cu contul de organizator pentru a vedea rÄspunsurile.</p>
+  <p style="text-align:center;margin-top:0">Conecteaz&#259;-te cu contul de organizator pentru a vedea r&#259;spunsurile.</p>
   <div id="loginBox">
     <label for="email">E-mail organizator</label><input id="email" type="email" autocomplete="username" placeholder="adresa ta de e-mail">
-    <label for="password">ParolÄ</label><input id="password" type="password" autocomplete="current-password" placeholder="Parola contului Supabase">
+    <label for="password">Parol&#259;</label><input id="password" type="password" autocomplete="current-password" placeholder="Parola contului">
     <div class="actions"><button id="loginBtn" type="button">Autentificare</button></div>
   </div>
   <div id="dashboard" class="hidden">
-    <div class="actions"><button id="refreshBtn" type="button">ActualizeazÄ lista</button> <button id="exportBtn" type="button">ExportÄ CSV</button> <button id="logoutBtn" type="button">Deconectare</button></div>
-    <div class="stats"><div class="stat">ConfirmÄri<b id="totalYes">0</b></div><div class="stat">AdulÈi<b id="totalAdults">0</b></div><div class="stat">Copii<b id="totalKids">0</b></div><div class="stat">Refuzuri<b id="totalNo">0</b></div></div>
-    <div style="overflow-x:auto"><table><thead><tr><th>Prenume</th><th>Nume</th><th>RÄspuns</th><th>AdulÈi</th><th>Copii</th><th>NotÄ</th></tr></thead><tbody id="guestRows"></tbody></table></div>
+    <div class="actions"><button id="refreshBtn" type="button">Actualizeaz&#259;</button> <button id="exportBtn" type="button">Export&#259; CSV</button> <button id="logoutBtn" type="button">Deconectare</button></div>
+    <div class="stats"><div class="stat">Confirm&#259;ri<b id="totalYes">0</b></div><div class="stat">Adul&#539;i<b id="totalAdults">0</b></div><div class="stat">Copii<b id="totalKids">0</b></div><div class="stat">Refuzuri<b id="totalNo">0</b></div></div>
+    <div class="tablewrap"><table><thead><tr><th>Prenume</th><th>Nume</th><th>R&#259;spuns</th><th>Adul&#539;i</th><th>Copii</th><th>Not&#259;</th></tr></thead><tbody id="guestRows"></tbody></table></div>
   </div>
-  <div id="adminNotice" class="notice" style="display:block">Pentru activare, completeazÄ setÄrile Supabase Ã®n fiÈierul <code>config.js</code>.</div>
+  <div id="adminNotice" class="notice" style="display:block">Pentru activare, completeaz&#259; set&#259;rile &#238;n fi&#537;ierul config.js.</div>
 </section>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./config.js"></script>
 <script>
 (() => {
  const cfg=window.DANIEL_CONFIG||{};
- const ready=cfg.url && cfg.anonKey && !cfg.url.includes("AICI_") && !cfg.anonKey.includes("AICI_") && !cfg.url.includes("PASTE_");
+ const ready=cfg.url && cfg.anonKey && !cfg.url.includes("AICI_") && !cfg.anonKey.includes("AICI_") && !cfg.url.includes("PASTE_") && !cfg.anonKey.includes("PASTE_");
  const client=ready&&window.supabase?window.supabase.createClient(cfg.url,cfg.anonKey):null;
  const form=document.getElementById('rsvpForm'), notice=document.getElementById('notice');
  const attending=document.getElementById('attending'), counts=document.getElementById('counts');
@@ -104,43 +163,49 @@ table{width:100%;border-collapse:collapse;font: .9rem Arial,sans-serif}th,td{tex
  attending.addEventListener('change',()=>{counts.classList.toggle('hidden',attending.value==='no')});
  form.addEventListener('submit',async e=>{
   e.preventDefault();
-  if(!client){say(notice,'Formularul nu este Ã®ncÄ conectat la baza de date.');return}
-  const data={first_name:document.getElementById('first_name').value.trim(),last_name:document.getElementById('last_name').value.trim(),attending:attending.value==='yes',adults:attending.value==='yes'?Number(document.getElementById('adults').value):0,children:attending.value==='yes'?Number(document.getElementById('children').value):0,note:document.getElementById('note').value.trim()};
-  const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Se trimiteâ¦';
+  if(!client){say(notice,'Formularul nu este \u00eenc\u0103 conectat la baza de date.');return}
+  const yes=attending.value==='yes';
+  const data={first_name:document.getElementById('first_name').value.trim(),last_name:document.getElementById('last_name').value.trim(),attending:yes,adults:yes?Number(document.getElementById('adults').value):0,children:yes?Number(document.getElementById('children').value):0,note:document.getElementById('note').value.trim()};
+  const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Se trimite\u2026';
   const {error}=await client.from('rsvps').insert(data);
-  btn.disabled=false;btn.textContent='ConfirmÄ prezenÈa';
-  if(error){say(notice,'Nu am putut salva rÄspunsul. Te rugÄm sÄ Ã®ncerci din nou sau sÄ contactezi organizatorul.');console.error(error);return}
-  form.reset();counts.classList.remove('hidden');say(notice,'MulÈumim! RÄspunsul tÄu a fost Ã®nregistrat. Te aÈteptÄm cu drag!');window.scrollTo({top:document.querySelector('.section').offsetTop,behavior:'smooth'});
+  btn.disabled=false;btn.textContent='Confirm\u0103 prezen\u021ba';
+  if(error){say(notice,'Nu am putut salva r\u0103spunsul. Te rug\u0103m s\u0103 \u00eencerci din nou sau s\u0103 contactezi organizatorul.');console.error(error);return}
+  form.reset();counts.classList.remove('hidden');
+  say(notice,yes?'Mul\u021bumim! R\u0103spunsul t\u0103u a fost \u00eenregistrat. Te a\u0219tept\u0103m cu drag!':'Mul\u021bumim c\u0103 ne-ai anun\u021bat. Ne pare r\u0103u c\u0103 nu po\u021bi veni!');
+  notice.scrollIntoView({behavior:'smooth',block:'center'});
  });
  const adminNotice=document.getElementById('adminNotice');
- if(!ready){document.getElementById('loginBtn').disabled=true;adminNotice.textContent='SetÄrile Supabase lipsesc. CompleteazÄ config.js.';return}
+ if(!ready){document.getElementById('loginBtn').disabled=true;adminNotice.textContent='Set\u0103rile lipsesc. Completeaz\u0103 config.js.';return}
  adminNotice.classList.add('hidden');
+ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  async function loadRows(){
   const {data,error}=await client.from('rsvps').select('first_name,last_name,attending,adults,children,note,created_at').order('created_at',{ascending:false});
-  if(error){say(adminNotice,'Nu s-a putut Ã®ncÄrca lista. VerificÄ autentificarea.');return}
-  const yes=data.filter(x=>x.attending);document.getElementById('totalYes').textContent=yes.length;
+  if(error){say(adminNotice,'Nu s-a putut \u00eenc\u0103rca lista. Verific\u0103 autentificarea.');return}
+  const yes=data.filter(x=>x.attending);
+  document.getElementById('totalYes').textContent=yes.length;
   document.getElementById('totalNo').textContent=data.length-yes.length;
   document.getElementById('totalAdults').textContent=yes.reduce((s,x)=>s+x.adults,0);
   document.getElementById('totalKids').textContent=yes.reduce((s,x)=>s+x.children,0);
-  document.getElementById('guestRows').innerHTML=data.map(x=>'<tr><td>'+esc(x.first_name)+'</td><td>'+esc(x.last_name)+'</td><td>'+(x.attending?'Confirmat':'Refuz')+'</td><td>'+x.adults+'</td><td>'+x.children+'</td><td>'+esc(x.note||'â')+'</td></tr>').join('');
+  document.getElementById('guestRows').innerHTML=data.map(x=>'<tr><td>'+esc(x.first_name)+'</td><td>'+esc(x.last_name)+'</td><td>'+(x.attending?'Confirmat':'Refuz')+'</td><td>'+x.adults+'</td><td>'+x.children+'</td><td>'+esc(x.note||'\u2014')+'</td></tr>').join('');
   window._danielRows=data;
  }
- function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
  function showDash(on){document.getElementById('dashboard').classList.toggle('hidden',!on);document.getElementById('loginBox').classList.toggle('hidden',on)}
  client.auth.getSession().then(({data})=>{if(data.session){showDash(true);loadRows()}});
  document.getElementById('loginBtn').addEventListener('click',async()=>{
-  const email=document.getElementById('email').value,password=document.getElementById('password').value;
+  const email=document.getElementById('email').value.trim(),password=document.getElementById('password').value;
   const {error}=await client.auth.signInWithPassword({email,password});
-  if(error){say(adminNotice,'Autentificarea nu a reuÈit. VerificÄ e-mailul Èi parola.');return}
+  if(error){say(adminNotice,'Autentificarea nu a reu\u0219it. Verific\u0103 e-mailul \u0219i parola.');return}
   adminNotice.classList.add('hidden');showDash(true);loadRows();
  });
  document.getElementById('refreshBtn').addEventListener('click',loadRows);
  document.getElementById('logoutBtn').addEventListener('click',async()=>{await client.auth.signOut();showDash(false)});
  document.getElementById('exportBtn').addEventListener('click',()=>{
-  const rows=window._danielRows||[];const csv=[['Prenume','Nume','ParticipÄ','AdulÈi','Copii','NotÄ','Data rÄspunsului'],...rows.map(x=>[x.first_name,x.last_name,x.attending?'Da':'Nu',x.adults,x.children,x.note||'',x.created_at])];
+  const rows=window._danielRows||[];
+  const csv=[['Prenume','Nume','Particip\u0103','Adul\u021bi','Copii','Not\u0103','Data r\u0103spunsului'],...rows.map(x=>[x.first_name,x.last_name,x.attending?'Da':'Nu',x.adults,x.children,x.note||'',x.created_at])];
   const content='\ufeff'+csv.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type:'text/csv;charset=utf-8;'}));a.download='lista-invitati-daniel.csv';a.click();URL.revokeObjectURL(a.href)
  });
 })();
 </script>
-</body></html>
+</body>
+</html>
