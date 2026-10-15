@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#781f24">
+<title>Petrecerea lui Daniel</title>
+<style>
+:root{--red:#81272b;--red2:#a23b3b;--cream:#fbf5e8;--ink:#39271d;--gold:#c9a66b}
+*{box-sizing:border-box}body{margin:0;background:#e9dfca;color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+.page{max-width:780px;margin:22px auto;background:var(--cream);border:1px solid #d3b98b;box-shadow:0 14px 45px #39271d25;position:relative;overflow:hidden}
+.page:before{content:"";position:absolute;inset:12px;border:1px solid #b78362;pointer-events:none}
+.hero{padding:48px 28px 28px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#e8d9b8 0,transparent 60%)}
+.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;color:var(--red);font-weight:bold}
+h1{font-size:clamp(2.5rem,8vw,5rem);line-height:1.02;color:var(--red);font-style:italic;margin:16px 0}
+.subtitle{font-size:1.1rem;line-height:1.6;max-width:520px;margin:0 auto}
+.ornament{color:var(--red);letter-spacing:.35em;font-size:1.4rem;margin:18px}
+.details{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px 30px 24px;text-align:center}
+.detail{padding:14px 8px;border-right:1px solid #d7c4a0}.detail:last-child{border:0}.detail strong{display:block;color:var(--red);font-size:1.05rem;margin-bottom:6px}.detail span{line-height:1.4}
+.section{padding:25px 28px 34px;max-width:590px;margin:auto}
+h2{font-size:1.8rem;text-align:center;color:var(--red);margin:0 0 10px}
+.intro{text-align:center;line-height:1.55;margin-bottom:22px}
+label{display:block;font-size:.96rem;margin:14px 0 6px;font-weight:bold}
+input,select,textarea{width:100%;padding:12px 13px;border:1px solid #cbb58f;border-radius:8px;background:#fffdf8;color:var(--ink);font:inherit}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+button,.button{border:0;border-radius:999px;background:var(--red);color:#fff8eb;padding:13px 22px;font:inherit;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+button:hover,.button:hover{background:#5e171b}button:disabled{opacity:.6;cursor:wait}
+.actions{text-align:center;margin-top:22px}.notice{margin-top:14px;padding:12px;border-radius:8px;background:#efe5cf;display:none;line-height:1.45}
+footer{text-align:center;padding:18px;color:#775c45;font-size:.88rem}
+.admin{margin:0 auto 28px;max-width:700px;padding:20px;background:#fffaf0;border:1px solid #d3b98b;border-radius:14px}
+.admin h2{font-size:1.4rem}.hidden{display:none!important}.stats{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.stat{background:#efe5cf;border-radius:9px;padding:10px 14px}.stat b{display:block;font-size:1.4rem;color:var(--red)}
+table{width:100%;border-collapse:collapse;font: .9rem Arial,sans-serif}th,td{text-align:left;border-bottom:1px solid #dfd1b7;padding:9px 6px}th{color:var(--red)}
+@media(max-width:560px){.page{margin:0 auto}.hero{padding-top:38px}.details{padding:10px 22px 18px;grid-template-columns:1fr;gap:0}.detail{border-right:0;border-bottom:1px solid #d7c4a0;padding:10px}.detail:last-child{border:0}.row{grid-template-columns:1fr}.section{padding:22px 26px 30px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="hero">
+    <div class="eyebrow">Cu drag, te invitÄm</div>
+    <div class="ornament">â¿ â¦ â¿</div>
+    <h1>Petrecerea<br>lui Daniel</h1>
+    <p class="subtitle">Hai sÄ sÄrbÄtorim Ã®mpreunÄ Ã®ntr-un loc plin de naturÄ, voie bunÄ Èi oameni dragi!</p>
+    <div class="ornament">â§ â¤ â§</div>
+  </header>
+  <section class="details">
+    <div class="detail"><strong>â¿ DATA</strong><span>12 iunie</span></div>
+    <div class="detail"><strong>â· ORA</strong><span>14:00 â 22:00</span></div>
+    <div class="detail"><strong>â LOCAÈIA</strong><span>Casa din lunca<br>Trebujeni</span></div>
+  </section>
+  <section class="section" id="rsvp">
+    <h2>Ne bucurÄm sÄ vii!</h2>
+    <p class="intro">Te rugÄm sÄ confirmi prezenÈa Èi sÄ ne spui cÃ¢te persoane vor participa.</p>
+    <form id="rsvpForm">
+      <div class="row">
+        <div><label for="first_name">Prenume *</label>
+        <input id="first_name" name="first_name" maxlength="60" autocomplete="given-name" required placeholder="Ex.: Maria"></div>
+        <div><label for="last_name">Nume *</label>
+        <input id="last_name" name="last_name" maxlength="60" autocomplete="family-name" required placeholder="Ex.: Popescu"></div>
+      </div>
+      <label for="attending">Vei participa? *</label>
+      <select id="attending" name="attending" required>
+        <option value="yes">Da, venim cu drag!</option>
+        <option value="no">Din pÄcate, nu putem ajunge</option>
+      </select>
+      <div id="counts">
+        <div class="row">
+          <div><label for="adults">NumÄr adulÈi *</label><select id="adults" name="adults"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div>
+          <div><label for="children">NumÄr copii *</label><select id="children" name="children"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div>
+        </div>
+      </div>
+      <label for="note">NotÄ (opÈional)</label>
+      <textarea id="note" name="note" rows="3" maxlength="500" placeholder="Alergii, menÈiuni sau un mesaj pentru Danielâ¦"></textarea>
+      <div class="actions"><button id="submitBtn" type="submit">ConfirmÄ prezenÈa</button></div>
+      <div id="notice" class="notice" role="status"></div>
+    </form>
+    <p style="text-align:center;font-size:.85rem;color:#775c45;margin-top:18px">Confirmarea ta ne ajutÄ sÄ pregÄtim totul cu drag. MulÈumim!</p>
+  </section>
+  <footer>Cu drag, te aÈteptÄm! â¡</footer>
+</main>
+<section class="admin" id="admin">
+  <h2>Panou organizator</h2>
+  <p style="text-align:center">ConecteazÄ-te cu contul de organizator pentru a vedea rÄspunsurile.</p>
+  <div id="loginBox">
+    <label for="email">E-mail organizator</label><input id="email" type="email" autocomplete="username" placeholder="adresa ta de e-mail">
+    <label for="password">ParolÄ</label><input id="password" type="password" autocomplete="current-password" placeholder="Parola contului Supabase">
+    <div class="actions"><button id="loginBtn" type="button">Autentificare</button></div>
+  </div>
+  <div id="dashboard" class="hidden">
+    <div class="actions"><button id="refreshBtn" type="button">ActualizeazÄ lista</button> <button id="exportBtn" type="button">ExportÄ CSV</button> <button id="logoutBtn" type="button">Deconectare</button></div>
+    <div class="stats"><div class="stat">ConfirmÄri<b id="totalYes">0</b></div><div class="stat">AdulÈi<b id="totalAdults">0</b></div><div class="stat">Copii<b id="totalKids">0</b></div><div class="stat">Refuzuri<b id="totalNo">0</b></div></div>
+    <div style="overflow-x:auto"><table><thead><tr><th>Prenume</th><th>Nume</th><th>RÄspuns</th><th>AdulÈi</th><th>Copii</th><th>NotÄ</th></tr></thead><tbody id="guestRows"></tbody></table></div>
+  </div>
+  <div id="adminNotice" class="notice" style="display:block">Pentru activare, completeazÄ setÄrile Supabase Ã®n fiÈierul <code>config.js</code>.</div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./config.js"></script>
+<script>
+(() => {
+ const cfg=window.DANIEL_CONFIG||{};
+ const ready=cfg.url && cfg.anonKey && !cfg.url.includes("AICI_") && !cfg.anonKey.includes("AICI_") && !cfg.url.includes("PASTE_");
+ const client=ready&&window.supabase?window.supabase.createClient(cfg.url,cfg.anonKey):null;
+ const form=document.getElementById('rsvpForm'), notice=document.getElementById('notice');
+ const attending=document.getElementById('attending'), counts=document.getElementById('counts');
+ const say=(el,msg)=>{el.textContent=msg;el.style.display='block'};
+ attending.addEventListener('change',()=>{counts.classList.toggle('hidden',attending.value==='no')});
+ form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!client){say(notice,'Formularul nu este Ã®ncÄ conectat la baza de date.');return}
+  const data={first_name:document.getElementById('first_name').value.trim(),last_name:document.getElementById('last_name').value.trim(),attending:attending.value==='yes',adults:attending.value==='yes'?Number(document.getElementById('adults').value):0,children:attending.value==='yes'?Number(document.getElementById('children').value):0,note:document.getElementById('note').value.trim()};
+  const btn=document.getElementById('submitBtn');btn.disabled=true;btn.textContent='Se trimiteâ¦';
+  const {error}=await client.from('rsvps').insert(data);
+  btn.disabled=false;btn.textContent='ConfirmÄ prezenÈa';
+  if(error){say(notice,'Nu am putut salva rÄspunsul. Te rugÄm sÄ Ã®ncerci din nou sau sÄ contactezi organizatorul.');console.error(error);return}
+  form.reset();counts.classList.remove('hidden');say(notice,'MulÈumim! RÄspunsul tÄu a fost Ã®nregistrat. Te aÈteptÄm cu drag!');window.scrollTo({top:document.querySelector('.section').offsetTop,behavior:'smooth'});
+ });
+ const adminNotice=document.getElementById('adminNotice');
+ if(!ready){document.getElementById('loginBtn').disabled=true;adminNotice.textContent='SetÄrile Supabase lipsesc. CompleteazÄ config.js.';return}
+ adminNotice.classList.add('hidden');
+ async function loadRows(){
+  const {data,error}=await client.from('rsvps').select('first_name,last_name,attending,adults,children,note,created_at').order('created_at',{ascending:false});
+  if(error){say(adminNotice,'Nu s-a putut Ã®ncÄrca lista. VerificÄ autentificarea.');return}
+  const yes=data.filter(x=>x.attending);document.getElementById('totalYes').textContent=yes.length;
+  document.getElementById('totalNo').textContent=data.length-yes.length;
+  document.getElementById('totalAdults').textContent=yes.reduce((s,x)=>s+x.adults,0);
+  document.getElementById('totalKids').textContent=yes.reduce((s,x)=>s+x.children,0);
+  document.getElementById('guestRows').innerHTML=data.map(x=>'<tr><td>'+esc(x.first_name)+'</td><td>'+esc(x.last_name)+'</td><td>'+(x.attending?'Confirmat':'Refuz')+'</td><td>'+x.adults+'</td><td>'+x.children+'</td><td>'+esc(x.note||'â')+'</td></tr>').join('');
+  window._danielRows=data;
+ }
+ function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+ function showDash(on){document.getElementById('dashboard').classList.toggle('hidden',!on);document.getElementById('loginBox').classList.toggle('hidden',on)}
+ client.auth.getSession().then(({data})=>{if(data.session){showDash(true);loadRows()}});
+ document.getElementById('loginBtn').addEventListener('click',async()=>{
+  const email=document.getElementById('email').value,password=document.getElementById('password').value;
+  const {error}=await client.auth.signInWithPassword({email,password});
+  if(error){say(adminNotice,'Autentificarea nu a reuÈit. VerificÄ e-mailul Èi parola.');return}
+  adminNotice.classList.add('hidden');showDash(true);loadRows();
+ });
+ document.getElementById('refreshBtn').addEventListener('click',loadRows);
+ document.getElementById('logoutBtn').addEventListener('click',async()=>{await client.auth.signOut();showDash(false)});
+ document.getElementById('exportBtn').addEventListener('click',()=>{
+  const rows=window._danielRows||[];const csv=[['Prenume','Nume','ParticipÄ','AdulÈi','Copii','NotÄ','Data rÄspunsului'],...rows.map(x=>[x.first_name,x.last_name,x.attending?'Da':'Nu',x.adults,x.children,x.note||'',x.created_at])];
+  const content='\ufeff'+csv.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type:'text/csv;charset=utf-8;'}));a.download='lista-invitati-daniel.csv';a.click();URL.revokeObjectURL(a.href)
+ });
+})();
+</script>
+</body></html>
