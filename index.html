@@ -10,7 +10,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Playfair+Display:ital,wght@1,700;1,900&display=swap" rel="stylesheet">
 <style>
-:root{--red:#8e1b1f;--red-d:#661316;--black:#1d1a17;--linen:#f6eedc;--linen2:#eddfc2;--ink:#2b2119;--muted:#6f5a45;--line:#cdb48a;--serif:'Playfair Display',Georgia,'Times New Roman',serif;--body:'Alegreya',Georgia,'Times New Roman',serif}
+root{
+--red:#8b9475;
+--red-d:#71795d;
+--black:#3d3a34;
+--linen:#f7f2e8;
+--linen2:#eef2e7;
+--ink:#4d483f;
+--muted:#766d61;
+--line:#d7dccd;
+--sage:#8b9475;
+--cream:#f7f2e8;
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:#e4d3b0;color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.55;padding:18px 14px 28px}
@@ -56,6 +66,128 @@ th{color:var(--red)}
 .defs{position:absolute;width:0;height:0;overflow:hidden}
 .duck{display:block;width:104px;height:104px;margin:0 auto 10px}
 .duck.sm{width:64px;height:64px;margin:0 auto 6px;transform:scaleX(-1)}
+ #cover{
+ min-height:100vh;
+ background:#f7f2e8;
+ position:relative;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ padding:40px 20px;
+ overflow:hidden;
+}
+
+#cover:before,
+#cover:after{
+ content:"✿";
+ position:absolute;
+ color:#c8d0be;
+ font-size:8rem;
+ opacity:.3;
+}
+
+#cover:before{
+ top:40px;
+ left:40px;
+}
+
+#cover:after{
+ bottom:40px;
+ right:40px;
+}
+
+.cover-title{
+ font-family:'Playfair Display',serif;
+ font-style:italic;
+ color:var(--sage);
+ font-size:clamp(3rem,8vw,5rem);
+ line-height:1.05;
+ margin:0;
+ max-width:700px;
+}
+
+.cover-title span{
+ display:block;
+}
+
+.cover-duck{
+ margin:25px 0;
+}
+
+.cover-duck svg{
+ width:240px;
+ height:240px;
+}
+
+.cover-message{
+ max-width:520px;
+ color:var(--muted);
+ font-size:1.2rem;
+ margin:0 auto 24px;
+}
+
+.cover-signature{
+ font-family:var(--serif);
+ font-size:2rem;
+ color:var(--sage);
+ margin-bottom:28px;
+}
+
+.celebrate-btn{
+ background:var(--sage);
+ color:white;
+ border:none;
+ border-radius:60px;
+ padding:18px 42px;
+ font-size:1.2rem;
+ font-weight:700;
+ box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.story-section{
+ max-width:520px;
+ margin:0 auto;
+ text-align:center;
+ padding:10px 24px 30px;
+}
+
+.story-section h2{
+ margin-bottom:20px;
+}
+
+.story-section p{
+ margin:12px 0;
+ font-size:1.18rem;
+ color:var(--muted);
+}
+
+.folk-divider{
+ height:30px;
+ background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='30'%3E%3Ctext x='0' y='22' font-size='22'%3E❀ ❖ ❀%3C/text%3E%3C/svg%3E");
+ opacity:.45;
+ margin:30px 0;
+}
+
+@keyframes breathe{
+ 0%{transform:scale(1)}
+ 50%{transform:scale(1.03)}
+ 100%{transform:scale(1)}
+}
+
+.cover-duck svg{
+ animation:breathe 5s ease-in-out infinite;
+}
+
+.detail dd b{
+ color:var(--sage);
+}
+
+.card{
+ margin-top:0;
+}
+
 @media(prefers-reduced-motion:no-preference){header .duck{animation:bob 3.2s ease-in-out infinite}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}}
 @media(max-width:560px){
  body{padding:12px 12px 22px}
@@ -84,15 +216,63 @@ th{color:var(--red)}
  <ellipse cx="89" cy="53" rx="5.5" ry="3.4" fill="#f29a8a" opacity=".75"/>
  <path d="M46 104 L40 114 L54 114 Z M66 104 L60 114 L74 114 Z" fill="#f08a24"/>
 </symbol></defs></svg>
+<section id="cover">
 
+  <svg class="duck cover-duck" viewBox="0 0 120 120" aria-hidden="true">
+    #duck</use>
+  </svg>
+
+  <h1 class="cover-title">
+    Ești invitat la
+    <span>petrecerea mea.</span>
+  </h1>
+
+  <p class="cover-message">
+    Te aștept într-o zi plină de joacă, zâmbete, natură și amintiri frumoase.
+  </p>
+
+  <div class="cover-signature">
+    Cu drag, Daniel
+  </div>
+
+  <button
+    class="celebrate-btn"
+    onclick="scrollInvitation()">
+      Hai să sărbătorim!
+  </button>
+
+</section>
 <main class="card">
   <svg class="band" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#rom)"/></svg>
   <header>
     <svg class="duck" viewBox="0 0 120 120" role="img" aria-label="Bobocel"><use href="#duck" width="120" height="120"/></svg>
     <p class="eyebrow">Cu drag, v&#259; invit&#259;m</p>
     <h1><span class="small">Petrecerea lui</span><span class="big">Daniel</span></h1>
-    <p class="lead">Hai s&#259; s&#259;rb&#259;torim &#238;mpreun&#259;, &#238;ntr-un loc plin de natur&#259;, cu voie bun&#259; &#537;i oameni dragi!</p>
+    <p class="lead">
+Pe 12 iunie, la Casa din Luncă din Trebujeni,
+vom sărbători cumătria lui Daniel.
+Vă așteptăm cu drag pentru o zi specială și importantă pentru noi.
+</p>
   </header>
+ <section class="story-section">
+
+  <h2>O zi specială</h2>
+
+  <p>
+    Eu sunt Daniel și mă pregătesc pentru o zi foarte importantă.
+  </p>
+
+  <p>
+    Pe 12 iunie voi sărbători alături de familie și prieteni într-un loc minunat în mijlocul naturii.
+  </p>
+
+  <p>
+    Mi-ar face mare plăcere să fii și tu parte din această poveste și să petrecem împreună o zi plină de zâmbete, voie bună și amintiri frumoase.
+  </p>
+
+  <div class="folk-divider"></div>
+
+</section>
   <svg class="band thin" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#rom)"/></svg>
   <dl class="details">
     <div class="detail"><dt>Data</dt><dd><b>12 iunie</b></dd></div>
@@ -153,7 +333,11 @@ th{color:var(--red)}
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="./config.js"></script>
 <script>
-(() => {
+function scrollInvitation(){
+ document.querySelector('.card').scrollIntoView({
+   behavior:'smooth'
+ });
+}
  const cfg=window.DANIEL_CONFIG||{};
  const ready=cfg.url && cfg.anonKey && !cfg.url.includes("AICI_") && !cfg.anonKey.includes("AICI_") && !cfg.url.includes("PASTE_") && !cfg.anonKey.includes("PASTE_");
  const client=ready&&window.supabase?window.supabase.createClient(cfg.url,cfg.anonKey):null;
