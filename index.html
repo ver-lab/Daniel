@@ -14,12 +14,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#f8f2e6;--paper:#fffaf0;--ink:#463e32;--sage:#87977d;--sage-dark:#63745c;--sage-light:#e8eee2;--line:#d8cbb4;--gold:#d6b36b}
+:root{--cream:#f8f2e6;--paper:#fffaf0;--ink:#51483e;--sage:#87977d;--sage-dark:#63745c;--sage-light:#e8eee2;--line:#d8cbb4;--gold:#d6b36b;--button-ink:#fffdf7}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;color:var(--ink);font-family:'Work Sans',system-ui,sans-serif;font-size:16px;line-height:1.65;background:var(--cream);overflow-x:hidden}
 h1,h2,h3{font-family:'Alegreya',Georgia,serif;font-weight:500;line-height:1.15;margin:0;color:var(--ink)}
 img{height:auto;max-width:100%}
+/* Refined typography, buttons and location lettering */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:11px 20px;border:1px solid transparent;border-radius:7px;text-decoration:none;font-family:'Work Sans',system-ui,sans-serif;font-size:.92rem;font-weight:600;line-height:1.25;letter-spacing:.01em;cursor:pointer;transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.btn-primary{background:var(--sage-dark);border-color:var(--sage-dark);color:var(--button-ink);box-shadow:0 3px 8px rgba(70,62,50,.10)}
+.btn-primary:hover{background:#53664c;border-color:#53664c;box-shadow:0 5px 12px rgba(70,62,50,.14);transform:translateY(-1px)}
+.btn-outline{background:rgba(255,253,247,.75);border-color:var(--sage-dark);color:var(--sage-dark)}
+.btn-outline:hover{background:var(--sage-light);border-color:var(--sage-dark);transform:translateY(-1px)}
+.btn:focus-visible{outline:3px solid rgba(135,151,125,.48);outline-offset:3px}
+.btn:disabled{opacity:.65;cursor:wait;transform:none;box-shadow:none}
+.signtxt{left:10%;right:4%;top:27%;bottom:23%;gap:5px}
+.signtxt small{letter-spacing:.14em;font-size:clamp(.78rem,2.2vw,.9rem);color:#777064}
+.signtxt b{font-size:clamp(1.4rem,4.6vw,1.9rem);line-height:1.12;color:#62584b;font-weight:600;text-shadow:0 1px 0 rgba(255,250,240,.45)}
+@media(max-width:420px){.btn{padding:10px 15px;font-size:.88rem}.signtxt b{font-size:clamp(1.25rem,5vw,1.55rem)}}
+@media(prefers-reduced-motion:reduce){.btn{transition:none}}
+
 button,a,input,select,textarea{font:inherit}
 .hidden{display:none!important}
 .weave{height:14px;width:100%;background:var(--sage)}
@@ -172,7 +186,6 @@ th,td{border-bottom:1px solid var(--line);padding:6px;text-align:left;vertical-a
     <img class="footer-flowers" src="./margarete.webp" width="700" height="640" alt="" aria-hidden="true">
     <footer>
       Va asteptam cu drag pentru o zi de neuitat.
-      <p class="footer-note">(Vizitati aceasta pagină mai aproape de eveniment pentru informații suplimentare referitoare la transport Mindresti - Trebujeni)</p>
     </footer>
   </div>
   <div class="weave"></div>
