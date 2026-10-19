@@ -28,10 +28,11 @@ img{height:auto;max-width:100%}
 .btn-outline:hover{background:var(--sage-light);border-color:var(--sage-dark);transform:translateY(-1px)}
 .btn:focus-visible{outline:3px solid rgba(135,151,125,.48);outline-offset:3px}
 .btn:disabled{opacity:.65;cursor:wait;transform:none;box-shadow:none}
-.signtxt{left:10%;right:4%;top:27%;bottom:23%;gap:5px}
-.signtxt small{letter-spacing:.14em;font-size:clamp(.78rem,2.2vw,.9rem);color:#777064}
-.signtxt b{font-size:clamp(1.4rem,4.6vw,1.9rem);line-height:1.12;color:#62584b;font-weight:600;text-shadow:0 1px 0 rgba(255,250,240,.45)}
-@media(max-width:420px){.btn{padding:10px 15px;font-size:.88rem}.signtxt b{font-size:clamp(1.25rem,5vw,1.55rem)}}
+.signtxt{left:11%;right:11%;top:19%;bottom:17%;gap:5px;align-items:center;padding:0 3px}
+.signtxt small{letter-spacing:.13em;font-size:clamp(.74rem,2vw,.86rem);color:#777064}
+.signtxt b{font-family:'Alegreya',serif;font-size:clamp(1.45rem,4.8vw,1.85rem);line-height:1.08;color:#62584b;font-weight:400;text-shadow:0 1px 0 rgba(255,250,240,.45);display:block}
+.signtxt .address{display:block;max-width:31ch;margin-top:5px;font-family:'Work Sans',system-ui,sans-serif;font-size:clamp(.62rem,1.8vw,.75rem);font-weight:400;line-height:1.3;letter-spacing:0;color:#777064}
+@media(max-width:420px){.btn{padding:10px 15px;font-size:.88rem}.stage h1{font-size:clamp(1.55rem,6vw,1.95rem)}.duck{width:min(38vw,142px)}.signtxt{left:10%;right:10%;top:17%;bottom:15%;gap:3px}.signtxt b{font-size:clamp(1.28rem,5vw,1.5rem)}.signtxt .address{font-size:clamp(.56rem,2.25vw,.67rem);line-height:1.22}}
 @media(prefers-reduced-motion:reduce){.btn{transition:none}}
 
 button,a,input,select,textarea{font:inherit}
@@ -46,11 +47,11 @@ body.is-invite #invitation{display:block}
 #welcome{min-height:100svh;position:relative;display:flex;flex-direction:column;overflow:hidden}
 .stage{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:72px 22px 110px;position:relative;isolation:isolate}
 .stage:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 18% 28%,rgba(214,179,107,.22),transparent 32%),radial-gradient(ellipse at 82% 65%,rgba(135,151,125,.24),transparent 36%),radial-gradient(circle at 25% 78%,rgba(255,250,240,.95) 0 5px,transparent 6px),radial-gradient(circle at 74% 24%,rgba(255,250,240,.95) 0 7px,transparent 8px),radial-gradient(circle at 88% 45%,rgba(255,250,240,.9) 0 4px,transparent 5px),radial-gradient(circle at 10% 50%,rgba(255,250,240,.9) 0 6px,transparent 7px),linear-gradient(135deg,#f8f0df,#f3ead8 48%,#f8f2e6)}
-.stage .inner{position:relative;z-index:2;max-width:580px}
-.duck{width:min(44vw,175px);height:auto;display:block;margin:0 auto 12px;animation:bob 5.5s ease-in-out infinite;filter:drop-shadow(0 10px 8px rgba(70,62,50,.12))}
+.stage .inner{position:relative;z-index:2;max-width:580px;display:flex;flex-direction:column;align-items:center;gap:clamp(14px,2.5vh,22px)}
+.duck{width:min(40vw,158px);height:auto;display:block;margin:0;animation:bob 5.5s ease-in-out infinite;filter:drop-shadow(0 10px 8px rgba(70,62,50,.12))}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-7px) rotate(1deg)}}
 .kicker{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin:6px 0 10px}
-.stage h1{font-size:clamp(2rem,7.2vw,3.05rem);font-style:italic;font-weight:400;max-width:22ch;margin:0 auto;text-wrap:balance}
+.stage h1{font-size:clamp(1.65rem,5.2vw,2.4rem);font-style:italic;font-weight:400;line-height:1.2;max-width:25ch;margin:0 auto;text-wrap:balance;letter-spacing:.005em}
 .stage p.sub{margin:14px auto 24px;max-width:34ch}
 .garland{position:absolute;top:0;left:50%;width:min(100%,560px);transform:translateX(-50%);z-index:0;pointer-events:none}
 .petals{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
@@ -77,9 +78,13 @@ body.is-invite #invitation{display:block}
 .place{max-width:560px;margin:0 auto}
 .sign{position:relative;max-width:430px;margin:0 auto}
 .sign img{display:block;width:100%;height:auto}
-.signtxt{position:absolute;left:12%;right:6%;top:30%;bottom:26%;display:flex;flex-direction:column;justify-content:center;text-align:center;line-height:1.15}
-.signtxt small{letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;color:var(--ink)}
-.signtxt b{font-family:'Alegreya',serif;font-weight:700;font-size:clamp(1.15rem,4vw,1.6rem);color:var(--ink)}
+.signtxt{position:absolute;left:11%;right:11%;top:19%;bottom:17%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.15}
+.signtxt small{text-transform:uppercase}
+.signtxt b{font-family:'Alegreya',serif;font-weight:400}
+.map-link{display:block;color:inherit;text-decoration:none;border-radius:4px}
+.map-link:focus-visible{outline:3px solid rgba(99,116,92,.7);outline-offset:4px}
+.map-link:hover .signtxt b,.map-link:focus-visible .signtxt b{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.map-link .address{font-weight:400}
 .place-caption{margin:4px auto 0;max-width:40ch}
 .group{display:block;width:min(70vw,260px);margin:0 auto 8px}
 h3.title{font-size:1.9rem;text-align:center}
@@ -147,13 +152,13 @@ th,td{border-bottom:1px solid var(--line);padding:6px;text-align:left;vertical-a
       <p>Abia aștept să ne cunoaștem și să sărbătorim împreună primul meu eveniment. Eu vin la pachet cu ochișori dulci și chicoteli, iar pe voi vă așteptăm cu bună dispoziție și puși pe distracție!</p>
       <div class="row2">
         <div class="card"><small>Data</small><b>12 iunie 2027</b></div>
-        <div class="card"><small>Ora începerii</small><b>13:00</b></div>
+        <div class="card"><small>Ora începerii</small><b>13:30</b></div>
       </div>
       <div class="actions"><button class="btn btn-outline" id="ics" type="button">Adaugă în calendar</button><a class="btn btn-primary" href="#rsvp">Confirmă participarea</a></div>
     </section>
     <div class="place-wrap reveal">
       <div class="place">
-        <div class="sign"><img src="./firma.webp" width="900" height="705" alt="Ilustrație decorativă pentru locație"><div class="signtxt"><small>Locația</small><b>Casa din luncă,<br>Trebujeni</b></div></div>
+        <a class="sign map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Satul+Trebujeni%2C+raionul+Orhei%2C+cod+po%C8%99tal+MD-3552%2C+Republica+Moldova" target="_blank" rel="noopener noreferrer" aria-label="Deschide în Google Maps: Satul Trebujeni, raionul Orhei, cod poștal MD-3552, Republica Moldova"><img src="./firma.webp" width="900" height="705" alt="Ilustrație cu locația evenimentului"><div class="signtxt"><small>Locația</small><b>Casa din luncă,<br>Trebujeni</b><span class="address">Satul Trebujeni, raionul Orhei,<br>cod poștal MD-3552,<br>Republica Moldova</span></div></a>
       </div>
     </div>
     <section class="panel reveal" id="rsvp" style="margin-top:18px">
@@ -264,7 +269,7 @@ th,td{border-bottom:1px solid var(--line);padding:6px;text-align:left;vertical-a
   $('again').onclick=function(){$('done').classList.add('hidden');$('rsvpForm').classList.remove('hidden');$('rsvpForm').reset();$('adults').value='1';$('children').value='0';$('counts').classList.remove('hidden')};
   function esc2(s){return String(s).replace(/[\\;,]/g,function(m){return '\\'+m})}
   $('ics').onclick=function(){
-    var t=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Daniel//RO','BEGIN:VEVENT','UID:daniel-20270612@ver-lab','DTSTAMP:20261019T000000Z','DTSTART:20270612T130000','DTEND:20270612T140000','SUMMARY:'+esc2('Cumătria lui Daniel'),'LOCATION:'+esc2('Casa din luncă, Trebujeni'),'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    var t=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Daniel//RO','BEGIN:VEVENT','UID:daniel-20270612@ver-lab','DTSTAMP:20261019T000000Z','DTSTART:20270612T133000','DTEND:20270612T143000','SUMMARY:'+esc2('Cumătria lui Daniel'),'LOCATION:'+esc2('Casa din luncă, Trebujeni'),'END:VEVENT','END:VCALENDAR'].join('\r\n');
     var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([t],{type:'text/calendar'}));a.download='cumatria-daniel.ics';document.body.appendChild(a);a.click();a.remove();
   };
   function E(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
