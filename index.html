@@ -23,26 +23,9 @@ img{height:auto;max-width:100%}
 button,a,input,select,textarea{font:inherit}
 .hidden{display:none!important}
 .weave{height:14px;width:100%;background:var(--sage)}
-/* Intro surprise */
-#surprise{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:var(--cream);transition:opacity .6s,visibility .6s}
-#surprise.dismissed{opacity:0;visibility:hidden;pointer-events:none}
-.surprise-inner{max-width:520px;width:100%}
-.surprise-title{font-size:clamp(1.7rem,6vw,2.5rem);margin:0 0 8px}
-.surprise-copy{margin:0 auto 18px;max-width:34ch}
-.daisy-stage{width:min(76vw,330px);aspect-ratio:1;margin:0 auto 18px;position:relative}
-.big-daisy{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.daisy-petal{transform-box:fill-box;transform-origin:50% 50%;animation:petalDrop 1.05s ease-in forwards;animation-delay:var(--delay)}
-@keyframes petalDrop{0%,12%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}70%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot)) scale(.8)}}
-.surprise-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;min-height:48px;padding:12px 24px;border:1.5px solid var(--sage-dark);border-radius:999px;text-decoration:none;cursor:pointer;font:600 1rem 'Work Sans',sans-serif;transition:transform .2s,background .2s}
-.btn:active{transform:scale(.98)}
-.btn-primary{background:var(--sage-dark);color:#fffaf0}
-.btn-primary:hover{background:#4f6049}
-.btn-outline{background:transparent;color:var(--ink)}
-.btn-outline:hover{background:var(--sage-light)}
 /* Main welcome */
 #site{transition:filter .4s}
-#site.locked{filter:blur(4px);pointer-events:none;user-select:none}
+#site.locked{filter:none;pointer-events:auto;user-select:auto}
 #invitation{display:none}
 body.is-invite #welcome{display:none}
 body.is-invite #invitation{display:block}
@@ -124,23 +107,7 @@ th,td{border-bottom:1px solid var(--line);padding:6px;text-align:left;vertical-a
 </style>
 </head>
 <body>
-<div id="surprise" role="dialog" aria-modal="true" aria-labelledby="surpriseTitle">
-  <div class="surprise-inner">
-    <div class="daisy-stage" aria-label="Ilustrație acuarelă cu o margaretă">
-      <img class="surprise-daisy" src="./daisy-watercolor.png" alt="Margaretă albă pictată în acuarelă, cu centru galben și frunze verde-salvie">
-      <span class="falling-petal p1" aria-hidden="true"></span>
-      <span class="falling-petal p2" aria-hidden="true"></span>
-      <span class="falling-petal p3" aria-hidden="true"></span>
-      <span class="falling-petal p4" aria-hidden="true"></span>
-      <span class="falling-petal p5" aria-hidden="true"></span>
-      <span class="falling-petal p6" aria-hidden="true"></span>
-    </div>
-    <div class="surprise-actions">
-      <button class="btn btn-primary" id="enterSite" type="button">Deschide invitația</button>
-    </div>
-  </div>
-</div>
-<div id="site" class="locked">
+<div id="site">
 <main id="welcome" aria-label="Pagina de întâmpinare">
   <div class="weave"></div>
   <section class="stage">
@@ -231,20 +198,7 @@ th,td{border-bottom:1px solid var(--line);padding:6px;text-align:left;vertical-a
 <script>
 (function(){
   var $=function(i){return document.getElementById(i)};
-  var site=$('site'), surprise=$('surprise');
-  function enter(){
-    surprise.classList.add('dismissed');
-    site.classList.remove('locked');
-    // Ensure the overlay no longer intercepts taps on touch devices.
-    surprise.setAttribute('aria-hidden','true');
-  }
-  $('enterSite').onclick=enter;
-  $('replaySurprise').onclick=function(){
-    var stage=$('.daisy-stage');
-    stage.querySelectorAll('.falling-petal').forEach(function(p){p.style.animation='none';p.offsetHeight;p.style.animation=''});
-
-  };
-  // Keep the surprise skippable and reveal the invitation after a short moment.
+  var site=$('site');
   var body=document.body;
   function route(){
     var inv=location.hash==='#invitatie'||location.hash==='#rsvp';
