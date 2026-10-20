@@ -66,11 +66,13 @@ body.is-invite #invitation{display:block}
 .panel:before{content:"";position:absolute;inset:8px;border:1px solid rgba(135,151,125,.4);border-radius:5px;pointer-events:none}
 .hero{text-align:center;position:relative}
 .hero .duck2{width:min(42vw,185px);margin:0 auto 8px;display:block;animation:bob 6s ease-in-out infinite}
-.hero h2{font-size:clamp(1.55rem,4.8vw,2.1rem);max-width:27ch;margin:0 auto 18px;text-wrap:balance;line-height:1.2}
+.panel.hero{padding:clamp(34px,6vw,54px) clamp(22px,6vw,54px)}
+.hero h2{font-size:clamp(1.7rem,4.8vw,2.25rem);max-width:27ch;margin:0 auto 25px;text-wrap:balance;line-height:1.2}
 .hero p{max-width:46ch;margin:0 auto 15px;text-align:left;font-size:clamp(.92rem,2.5vw,.98rem);line-height:1.85;letter-spacing:.005em}
-.hero p.invitation-copy{margin:0 auto 15px}
-.hero p.invitation-copy:last-of-type{margin-bottom:20px}
-@media(min-width:520px){.hero p.invitation-copy{max-width:43ch}.hero h2{margin-bottom:22px}}
+.hero p.invitation-copy{max-width:43ch;margin:0 auto 19px;text-align:center;line-height:1.8}
+.hero p.invitation-copy:last-of-type{margin-bottom:24px}
+.hero .kicker{margin:0 auto 10px;font-size:.72rem;letter-spacing:.18em;color:var(--sage-dark)}
+@media(min-width:520px){.hero p.invitation-copy{max-width:43ch}.hero h2{margin-bottom:27px}}
 .date{font-family:'Alegreya',serif;font-size:1.5rem;margin:16px 0 8px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 8px}
 .card{border:1px solid var(--line);background:#fffdf6;padding:14px 10px;text-align:center;border-radius:8px}
@@ -151,10 +153,11 @@ th,td{border-bottom:1px solid var(--line);padding:6px;text-align:left;vertical-a
   <div class="wrap">
     <section class="panel hero reveal">
       <img class="duck2" src="./coroana.webp" width="700" height="970" alt="Bobocel cu coroană">
-      <h2>Te invit oficial la Cumătria mea!</h2>
-      <p class="invitation-copy">Abia aștept să ne cunoaștem și să sărbătorim împreună primul meu eveniment! Eu vin cu ochișori dulci și chicoteli, iar pe voi vă aștept cu voie bună și chef de taifas.</p>
-      <p class="invitation-copy">Părinții mi-au povestit despre copilăria voastră de altădată — fără tablete, dar cu ogrăzi pline de viață. Vă invit să-mi dăruiți o poveste și să-mi spuneți cum se făceau adevăratele năzbâtii!</p>
-      <p class="invitation-copy">Împreună cu părinții, vă promitem muzică bună, bucate cu gust de amintiri și voie bună, ca pe vremuri.</p>
+      <p class="kicker">Cu drag și multă bucurie</p>
+      <h2>Te invit cu drag la cumătria mea!</h2>
+      <p class="invitation-copy">Abia aștept să ne cunoaștem! Eu vin cu ochișori dulci și chicoteli, iar pe voi vă aștept cu zâmbete, voie bună și chef de taifas.</p>
+      <p class="invitation-copy">Părinții mi-au povestit despre vremurile voastre de altădată: fără tablete, dar cu ogrăzi pline de viață și năzbâtii cât cuprinde. Mi-ar plăcea să-mi povestiți câte ceva din copilăria voastră și să mă luați, măcar pentru o clipă, în lumea acelor amintiri.</p>
+      <p class="invitation-copy">Împreună cu părinții mei, vă aștept cu muzică bună, bucate gustoase și o petrecere plină de veselie!</p>
       <div class="row2">
         <div class="card"><small>Data</small><b>12 iunie 2027</b></div>
         <div class="card"><small>Ora începerii</small><b>13:30</b></div>
