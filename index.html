@@ -264,17 +264,17 @@ th,td{border-bottom:1px solid var(--line);padding:6px;text-align:left;vertical-a
   $('rsvpForm').addEventListener('submit',function(ev){
     ev.preventDefault();hide($('err'));
     var f=$('first').value.trim(),l=$('last').value.trim();
-    if(!f||!l){say($('err'),'Te rugăm să completezi prenumele și numele.');return}
-    if(!client){say($('err'),'Formularul nu este conectat încă. Ne pare rău, încearcă mai târziu.');return}
+    if(!f||!l){say($('err'),window.DanielLanguage.translations[window.DanielLanguage.getLanguage()].required);return}
+    if(!client){say($('err'),window.DanielLanguage.translations[window.DanielLanguage.getLanguage()].offline);return}
     var yes=att(),a=yes?parseInt($('adults').value,10):0,c=yes?parseInt($('children').value,10):0;
-    if(yes&&a<1){say($('err'),'Alege cel puțin un adult.');return}
-    var b=$('send');b.disabled=true;b.textContent='Se trimite...';
+    if(yes&&a<1){say($('err'),window.DanielLanguage.translations[window.DanielLanguage.getLanguage()].adultRequired);return}
+    var b=$('send');b.disabled=true;b.textContent=window.DanielLanguage.translations[window.DanielLanguage.getLanguage()].sending;
     client.from('rsvps').insert({first_name:f,last_name:l,attending:yes,adults:a,children:c,note:$('note').value.trim()}).then(function(r){
-      b.disabled=false;b.textContent='Trimite Răspuns';
-      if(r.error){say($('err'),'Nu am putut salva răspunsul. Te rugăm să încerci din nou.');return}
-      $('doneMsg').textContent=yes?('Te așteptăm cu drag, '+f+'! ('+a+' adulți, '+c+' copii)'):('Ne pare rău că nu poți veni, '+f+'. Mulțumim că ne-ai anunțat.');
+      b.disabled=false;b.textContent=window.DanielLanguage.translations[window.DanielLanguage.getLanguage()].send;
+      if(r.error){say($('err'),window.DanielLanguage.translations[window.DanielLanguage.getLanguage()].saveError);return}
+      $('doneMsg').textContent=yes?(window.DanielLanguage.getLanguage()==='en'?('We look forward to seeing you, '+f+'! ('+a+' adults, '+c+' children)'):('Te așteptăm cu drag, '+f+'! ('+a+' adulți, '+c+' copii)')):(window.DanielLanguage.getLanguage()==='en'?('Sorry you can’t make it, '+f+'. Thank you for letting us know.'):('Ne pare rău că nu poți veni, '+f+'. Mulțumim că ne-ai anunțat.'));
       $('rsvpForm').classList.add('hidden');$('done').classList.remove('hidden');$('done').scrollIntoView({block:'center'});
-    },function(){b.disabled=false;b.textContent='Trimite Răspuns';say($('err'),'Nu am putut salva răspunsul. Verifică conexiunea.')});
+    },function(){b.disabled=false;b.textContent='Trimite Răspuns';say($('err'),window.DanielLanguage.translations[window.DanielLanguage.getLanguage()].connectionError)});
   });
   $('again').onclick=function(){$('done').classList.add('hidden');$('rsvpForm').classList.remove('hidden');$('rsvpForm').reset();$('adults').value='1';$('children').value='0';$('counts').classList.remove('hidden')};
   function esc2(s){return String(s).replace(/[\\;,]/g,function(m){return '\\'+m})}
